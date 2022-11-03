@@ -30,9 +30,7 @@ User: Exports/downloads the tool output
 ### Example User 3: Social Science Researcher Interested in Seeing Media that Covered Her Recent Paper 
 A social science researcher is interested in understanding how news media have covered the findings published in her most recent empirical article. Although she has found some news articles on the internet (e.g., Google News), she is looking for a quick and automated way to consolidate all of the URLs of news stories that cited her work (hyperlinked or mentioned by author name+institution) and were published by trusted news publications.
 
-#### Use-Case for User 3:
-User: Upload her work (in hyperlinked or with author name, institution) in a .csv file
-[DRAG AND DROP]  
+#### Use-Case for User 3:  
 User: uploads this .csv file to our software [DRAG AND DROP]  
 Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
 Tool: Saves list of search results in .csv file  
