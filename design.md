@@ -36,6 +36,4 @@ User: Upload her work (in hyperlinked or with author name, institution) in a .cs
 User: uploads this .csv file to our software [DRAG AND DROP]  
 Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
 Tool: Saves list of search results in .csv file  
-User: Exports/downloads the tool output 
-
-
+User: Exports/downloads the tool output
