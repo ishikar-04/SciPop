@@ -10,21 +10,21 @@ Our software will ideally be designed to accomodate differences in user roles de
 Delaney is an anthropologist interested in doing meta-research about how the press cites or uses scholarly research on the topic of sex/gender, hormone testing, and professional sports. For example, in many professional sports associations hormone testing for reproductive hormones (estrogen, testosterone) is still quite common. It is controversial because hormone levels are not specific to ones gender or neccessarily their biological sex assigned at birth. Delaney has a .csv file of scholarly articles organized by author first and last name, and DOI. She wants to be able to upload this .csv and get a .csv or visual dashboard of what types of press outlets (.e.g New York Times, Science) or popular media (Blogs) are making reference to these articles when they discuss sex/gender in sports. While Delaney’s research isn’t super high impact (compared to User 2), she still wants to know how this research line is being discussed in popular media. 
 
 #### Use-Case for User 1:
-User: Uploads a .csv file listing the empirical research that they are interested in scoping [DRAG AND DROP]
-Tool: Scrapes Google news for each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title
-Tool: Saves list of search results in .csv file
+User: Uploads a .csv file listing the empirical research that they are interested in scoping [DRAG AND DROP]  
+Tool: Scrapes Google news for each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
+Tool: Saves list of search results in .csv file  
 User: Exports/downloads the tool output 
 
 ### Example User 2: Oncology Researcher Wants to Scope Out High Impact Research and It's Use in Media 
 An oncology researcher doing work on CART cell therapy, a popular and cutting edge immunotherapy. She wants to understand how the public is writing about new immunotherapy techniques. This oncology professor knows that this area of research is high impact and likely to get picked up by media within days to months of publishing. She doesn't have a pre-specified list of articles like User 1, but she wants to use UW libraries to search for the top 50 articles relevant to search terms about CART cell therapy and then use that .csv to explore how media is popularizing this scholarly research. 
 
 #### Use-Case for User 2:
-User:  navigates to UW library search 
-User: searches for “CART Cell Therapy” peer-reviewed journal articles, filtered by year of choice (2021-2022) and searches top 50 results
-User: downloads the query to their computer as a .csv file
-User: uploads this .csv file to our software [DRAG AND DROP]
-Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title
-Tool: Saves list of search results in .csv file
+User:  navigates to UW library search  
+User: searches for “CART Cell Therapy” peer-reviewed journal articles, filtered by year of choice (2021-2022) and searches top 50 results  
+User: downloads the query to their computer as a .csv file  
+User: uploads this .csv file to our software [DRAG AND DROP]  
+Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
+Tool: Saves list of search results in .csv file  
 User: Exports/downloads the tool output 
 
 ### Example User 3: Social Science Researcher Interested in Seeing Media that Covered Her Recent Paper 
@@ -32,10 +32,10 @@ A social science researcher is interested in understanding how news media have c
 
 #### Use-Case for User 3:
 User: Upload her work (in hyperlinked or with author name, institution) in a .csv file
-[DRAG AND DROP]
-User: uploads this .csv file to our software [DRAG AND DROP]
-Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title
-Tool: Saves list of search results in .csv file
+[DRAG AND DROP]  
+User: uploads this .csv file to our software [DRAG AND DROP]  
+Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
+Tool: Saves list of search results in .csv file  
 User: Exports/downloads the tool output 
 
 
