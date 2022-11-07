@@ -35,3 +35,21 @@ User: uploads this .csv file to our software [DRAG AND DROP]
 Tool: Searches each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
 Tool: Saves list of search results in .csv file  
 User: Exports/downloads the tool output
+
+## Component Design
+
+### Root component – Web scraper for Google News
+This can be developed as a primary component which is not dependent on the features which upload or download the CSV files. THEREFORE it can be tested independently. We will adapt the GoogleNews package in Python to scrape results from Google News. This will be tested with a training dataset of scientific articles with known popular media coverage. We plan to use googlenews.get_links() to return the list of news articles that we scrape from Google News. 
+
+
+### Component 2- DOI/Citation Input by the User
+User will upload a .csv file in which each row contains data regarding a single publication. Each column stores a different identifying feature of the article (e.g. article title, DOI, first author last name, first author given name, author affiliation, journal or publisher name, associated funding sources) to optimize scraping results. 
+
+![Image](./Users/delaneyglass/CSE Project/CSE583-Project/IMAGE/Screengrab Tech Spec.png)
+
+### Component 3 - Popular Article Storage from Web Scrape 
+Web scraper will return scrape as a list with popular media articles  
+List of results will be stored as a data frame in Pandas  
+User downloads stored dataframe as .csv (e.g. on a website/dashboard, import library we developed)
+
+
