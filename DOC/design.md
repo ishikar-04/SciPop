@@ -45,7 +45,7 @@ This can be developed as a primary component which is not dependent on the featu
 ### Component 2- DOI/Citation Input by the User
 User will upload a .csv file in which each row contains data regarding a single publication. Each column stores a different identifying feature of the article (e.g. article title, DOI, first author last name, first author given name, author affiliation, journal or publisher name, associated funding sources) to optimize scraping results. 
 
-![Image](./Users/delaneyglass/CSE Project/CSE583-Project/IMAGE/Screengrab Tech Spec.png)
+![Image](https://github.com/ishikar-04/CSE583-Project/blob/main/IMAGE/Screengrab%20Tech%20Spec.png?raw=true)
 
 ### Component 3 - Popular Article Storage from Web Scrape 
 Web scraper will return scrape as a list with popular media articles  
