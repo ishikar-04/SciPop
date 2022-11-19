@@ -1,9 +1,7 @@
 # this is test code for pygooglenews
 
-from pygooglenews import GoogleNews  # import google news scraper
+from GoogleNews import GoogleNews
 
-gn = GoogleNews() #short name for GoogleNews
-
-top = gn.top_news()
+gn = GoogleNews()
 
 
