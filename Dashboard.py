@@ -37,7 +37,9 @@ st.image(
 st.write(
 """
 # SCIPOP APP
-Upload your article dataset to see the relevant news.
+Upload your article dataset to see the relevant news.\n
+#### Dataset guidance:\n 
+Column_Name: Author_Name, Article_Title, Article_DOI. Could see example dataset for reference.
 """
 )
 
