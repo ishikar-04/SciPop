@@ -46,4 +46,5 @@ Web scraper will return scrape as a list with popular media articles
 List of results will be stored as a data frame in Pandas  
 User downloads stored dataframe as .csv from the SciPop webpage. 
 
-
+### Component 4 - Users’ Interface App
+A website for users to upload a input file in .csv format, showing the preview for input to help users check what they upload is right, and then giving back the scraping results to them as a .csv file.
