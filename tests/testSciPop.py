@@ -3,7 +3,7 @@ This is the test file which tests the SciPop function
 """
 import numpy as np
 import unittest
-
+import pandas as pd
 from scraper import main
 
 class TestMain(unittest.TestCase):
@@ -20,9 +20,9 @@ class TestMain(unittest.TestCase):
         """
         Check that input is a .csv file, it cannot be any other file type
         """
-        df = pd.read_csv('data.xlsx')
-        with self.assertRaises(TypeError):
-            main(df) #data must be a .csv file
+        #df = pd.read_csv('data.xlsx')
+        if df.endswith('.csv'):
+            raise TypeError('Input error. File must be in .csv format.');
         return
 
     def test_missing(self):
