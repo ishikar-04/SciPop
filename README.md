@@ -22,7 +22,7 @@ Use your .csv as you wish and cite SciPop!
 
 ### How Can I View The Behind-The-Scenes Code? ###  
 
-Navigate to "DOC/testcase_notebook.ipynb" for examples using .csv files in this Github Repo. These test cases (example users and scholarly topics) are fully described in "DOC/design.md"
+Navigate to "examples/testcase_notebook.ipynb" for examples using .csv files in this Github Repo. These test cases (example users and scholarly topics) are fully described in "DOC/design.md"
 
 If you want to see more code, you may clone this repository and run it using the virtual environment above. 
 
