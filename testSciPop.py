@@ -4,7 +4,7 @@ This is the test file which tests the SciPop function
 import numpy as np
 import unittest
 
-from functions_DG import main_function
+from scraper import main
 
 class TestMain(unittest.TestCase):
 
@@ -12,17 +12,17 @@ class TestMain(unittest.TestCase):
         """
         Make sure the function runs at all with user input file
         """
-        data = pd.read_csv('UseCase1_Data.csv') # use case 1 test file
-        main_function(data)
+        df = pd.read_csv('UseCase1_Data.csv') # use case 1 test file
+        main(df)
         return
 
     def test_csv(self):
         """
         Check that input is a .csv file, it cannot be any other file type
         """
-        data = pd.read_csv('data.xlsx')
+        df = pd.read_csv('data.xlsx')
         with self.assertRaises(TypeError):
-            main_function(data) #data must be a .csv file
+            main(df) #data must be a .csv file
         return
 
     def test_missing(self):
