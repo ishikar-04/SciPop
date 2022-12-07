@@ -4,6 +4,7 @@ channels:
 dependencies:
   - nltk=3.5
   - pandas=1.0.5
+  - pip=20.1.1
   - pip:
     - pygooglenews==0.1.2
     - streamlit==1.15.1
