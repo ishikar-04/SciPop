@@ -1,1 +1,0 @@
-from .scipop import scraper
