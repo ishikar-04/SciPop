@@ -43,6 +43,14 @@ def main(df):
     df.dropna(how='all', axis=1, inplace=True)
 
     # Matching steps need to be added
+
+    # raise error for invalid input
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("The input argument should be in pd.DataFrame format")
+    
+    # raise error for invalid number of columns
+    if  len(df.columns) < 3:
+        raise ValueError("The number of variables in the dataset should be at least 3")
     
     # get keywords in the article title to remove useless results
     keyword_list = key_words(df)
@@ -82,6 +90,16 @@ def key_words(df):
     Input: User's uploaded dataset in pandas.DataFrame format
     Output: 10 most common words in article titles in list format
     """
+    
+    # raise error for no title column
+    if 'Article_Title' not in df.columns:
+        raise ValueError("No available columns for counting keywords")
+    
+    # raise error if the type of values (except Null) is not string
+    df_article_title = df[df.Article_Title.notnull()]
+    if not isinstance(df_article_title.iloc[0].loc['Article_Title'], str):
+        raise TypeError("Article title should be a string")
+
     article_titles = df['Article_Title'].to_list()
 
     nltk.download('stopwords')
@@ -116,7 +134,20 @@ def scraping_author(df):
     Input: User's uploaded dataset in pandas.DataFrame format
     Output: Scraping results as a dataset in pandas.DataFrame format
     """
+
+    # raise error for no author column
+    if 'Author_Name' not in df.columns:
+        raise ValueError("No available column for scarping by author_name")
+
+    # raise error for no doi column
+    if 'Article_DOI' not in df.columns:
+        raise ValueError("No available column for scarping by DOI")
+    
+    # raise error if the type of values (except Null) is not string
     df_author = df[df.Author_Name.notnull()]
+    if not isinstance(df_author.iloc[0].loc['Author_Name'], str):
+        raise TypeError("Author name should be a string")
+
 
     stories = []
     for i in range(len(df_author)):
@@ -142,8 +173,13 @@ def scraping_doi(df):
     Input: User's uploaded dataset in pandas.DataFrame format
     Output: Scraping results as a dataset in pandas.DataFrame format
     '''
-    stories = []
+    
+    # raise error if the type of values (except Null) is not string
     df_doi = df[df.Article_DOI.notnull()]
+    if not isinstance(df_doi.iloc[0].loc['Article_DOI'], str):
+        raise TypeError("DOI should be a string")
+
+    stories = []
     for i in range(len(df_doi)):
         search = gn.search(df_doi.iloc[i].loc['Article_DOI'])
         newsitem = search['entries']

@@ -1,44 +1,125 @@
 """
 This is the test file which tests the SciPop function
 """
-import numpy as np
 import unittest
 import pandas as pd
-from scraper import main
+from scipop.scraper import main
+from scipop.scraper import key_words
+from scipop.scraper import scraping_author
+from scipop.scraper import scraping_doi
 
-class TestMain(unittest.TestCase):
+class TestScraper(unittest.TestCase):
 
     def test_smoke(self):
         """
-        Make sure the function runs at all with user input file
+        Make sure the function runs at all with user input file.
         """
-        df = pd.read_csv('UseCase1_Data.csv') # use case 1 test file
+        df = pd.read_csv('UseCase1_Data.csv')
         main(df)
         return
 
-    def test_csv(self):
+    def test_df(self):
         """
-        Check that input is a .csv file, it cannot be any other file type
+        Edge test to make sure the function throws a TypeError
+        when the df is not a pd.DataFrame.
         """
-        #df = pd.read_csv('data.xlsx')
-        if df.endswith('.csv'):
-            raise TypeError('Input error. File must be in .csv format.');
+        df = {
+            'Author_Name': 'Kevin',
+            'DOI': '10.1123/wspaj.15.1.3',
+            'Title': 'The Biology of Sex and Sport'
+            }
+        with self.assertRaises(TypeError):
+            main(df)
         return
 
-    def test_missing(self):
+    def test_df_cols(self):
         """
-        Check whether the .csv file has missing data for each column header,
-        if Author_Name is missing but all other col's are present, locate author
-        name using a scraper
+        Edge test to make sure the function throws a ValueError
+        when the input dataset has less than 3 columns.
         """
-        missing_data = pd.isnull(df) #in process trying to figure out how to account for any missing data input by user
+        data = {
+            'Author_Name': 'Kevin',
+            'DOI': '10.1123/wspaj.15.1.3',
+            }
+        df = pd.DataFrame.from_dict(data)
+        with self.assertRaises(ValueError):
+            main(df)
+        return
 
+    def test_title_col(self):
+        """
+        Edge test to make sure the function throws a ValueError
+        when the df does not have title column.
+        """
+        df = pd.read_csv('UseCase1_Data.csv')
+        df = df.drop(columns=['Article_Title'])
+        with self.assertRaises(ValueError):
+            key_words(df)
+        return
 
+    def test_title_type(self):
+        """
+        Edge test to make sure the function throws a TypeError
+        when the article titles are not in string format.
+        """
+        data = {
+            'Author_Name': 'Kevin',
+            'DOI': '10.1123/wspaj.15.1.3',
+            'Article_Title': 10086
+            }
+        df = pd.DataFrame.from_dict(data)
+        with self.assertRaises(TypeError):
+            key_words(df)
+        return
 
+    def test_author_col(self):
+        """
+        Edge test to make sure the function throws a ValueError
+        when the df does not have title column.
+        """
+        df = pd.read_csv('UseCase1_Data.csv')
+        df = df.drop(columns=['Author_Name'])
+        with self.assertRaises(ValueError):
+            scraping_author(df)
+        return
 
+    def test_author_type(self):
+        """
+        Edge test to make sure the function throws a TypeError
+        when the article titles are not in string format.
+        """
+        data = {
+            'Author_Name': 123,
+            'DOI': '10.1123/wspaj.15.1.3',
+            'Article_Title': 'The Biology of Sex and Sport'
+            }
+        df = pd.DataFrame.from_dict(data)
+        with self.assertRaises(TypeError):
+            scraping_author(df)
+        return
 
+    def test_doi_col(self):
+        """
+        Edge test to make sure the function throws a ValueError
+        when the df does not have DOI column.
+        """
+        df = pd.read_csv('UseCase1_Data.csv')
+        df = df.drop(columns=['Article_DOI'])
+        with self.assertRaises(ValueError):
+            scraping_author(df)
+        return
 
-
-
-
-
+    def test_doi_type(self):
+        """
+        Edge test to make sure the function throws a TypeError
+        when the article DOI are not in string format.
+        """
+        data = {
+            'Author_Name': 'Kevin',
+            'Article_DOI': 10.12,
+            'Article_Title': 'The Biology of Sex and Sport'
+            }
+        df = pd.DataFrame.from_dict(data)
+        with self.assertRaises(TypeError):
+            scraping_doi(df)
+        return
