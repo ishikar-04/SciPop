@@ -29,6 +29,8 @@ def main(df):
     (ii) function which consolidates a list of relevant keywords. Returns a csv file containing
     academic journal article title, author, and DOI appended to related news 
     articles and their corresponding URLS
+    Input: User's uploaded dataset in pandas.DataFrame format
+    Output: Scraping results as a dataset in pandas.DataFrame format
     """
     # must be in same repository that the jupyter notebook is located in
     # df = pd.read_csv("UseCase1_Data.csv")
@@ -80,6 +82,8 @@ def main(df):
 def key_words(df):
     """
     Key_words function to help eliminate results that are not relevant to the articles.
+    Input: User's uploaded dataset in pandas.DataFrame format
+    Output: 10 most common words in article titles in list format
     """
     article_titles = df['Article_Title'].to_list()
 
@@ -107,8 +111,12 @@ def key_words(df):
 
 
 def scraping_author(df):
-    """This function scrapes google news for anything matching the 
-    scholarly author name in df"""
+    """
+    This function scrapes google news for anything matching the 
+    scholarly author name in df
+    Input: User's uploaded dataset in pandas.DataFrame format
+    Output: Scraping results as a dataset in pandas.DataFrame format
+    """
     #df_author = df.dropna([df.iloc'Author_Name'])
     df_author = df[df.Author_Name.notnull()]
 
@@ -130,8 +138,12 @@ def scraping_author(df):
 
 
 def scraping_doi(df):
-    '''This function scrapes google news for anything matching the 
-    scholarly DOI in df'''
+    '''
+    This function scrapes google news for anything matching the 
+    scholarly DOI in df
+    Input: User's uploaded dataset in pandas.DataFrame format
+    Output: Scraping results as a dataset in pandas.DataFrame format
+    '''
     stories = []
     df_doi = df[df.Article_DOI.notnull()]
     for i in range(len(df_doi)):
@@ -151,6 +163,12 @@ def scraping_doi(df):
 
 
 def scraping_title(df):
+    '''
+    This function scrapes google news for anything matching the 
+    scholarly title in df
+    Input: User's uploaded dataset in pandas.DataFrame format
+    Output: Scraping results as a dataset in pandas.DataFrame format
+    '''
     stories = []
     df_article_title = df[df.Article_Title.notnull()]
     for i in range(len(df_article_title)):
@@ -169,6 +187,9 @@ def scraping_title(df):
     return stories
 
 
+'''
+The following codes is to set up users' interface with Streamlit.
+'''
 def _max_width_():
     """
     Display string formatted as Markdown.
@@ -206,7 +227,7 @@ Column_Name: Author_Name, Article_Title, Article_DOI. Could see example dataset 
 """
 )
 
-# Display a file uploader widget. Users can drag/drop their input file.
+# Display a file uploader widget. Users can drag/drop their input file in .csv format.
 uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 
 # Checkbox of example file to demo the app.
@@ -228,7 +249,8 @@ if uploaded_file:
     output_df = main(df)
 else:
     st.stop()
-    
+
+# Display a download button widget. Users can download their output file in .csv format.
 st.download_button(
     label="Download data as CSV",
     data=output_df.to_csv().encode('utf-8'),
