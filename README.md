@@ -19,6 +19,38 @@ Wait for your updated .csv file to appear then click "Download"
 
 Step 5:  
 Use your .csv as you wish and cite SciPop!
+  
+### Repository Structure ###
+  
+.
+└── CSE583-Project
+    ├── DOC
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-39.pyc
+    │   └── design.md
+    ├── IMAGE
+    │   ├── Screengrab Tech Spec.png
+    │   └── logo-color.png
+    ├── LICENSE
+    ├── README.md
+    ├── __pycache__
+    │   ├── scraper.cpython-39.pyc
+    │   └── testSciPop.cpython-39.pyc
+    ├── environment.yml
+    ├── examples
+    │   ├── UseCase1_Data.csv
+    │   ├── UseCase2_Data.csv
+    │   ├── functions_bad input.ipynb
+    │   └── testcase_example.ipynb
+    ├── scipop
+    │   ├── __init__.py
+    │   └── scraper.py
+    └── tests
+        ├── __init__.py
+        └── testSciPop.py  
+  
+
 
 ### How Can I View The Behind-The-Scenes Code? ###  
 
