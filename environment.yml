@@ -2,11 +2,11 @@ name: CSE583
 channels:
   - defaults
 dependencies:
-  - nltk=3.5
-  - pandas=1.5.2
-  - pip=20.1.1
+  - nltk
+  - pandas
+  - pip
   - setuptools=49.2.0
   - pip:
     - pygooglenews==0.1.2
-    - streamlit==1.15.1
+    - streamlit
 prefix: /opt/anaconda3/CSE583
