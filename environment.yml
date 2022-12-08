@@ -5,7 +5,7 @@ dependencies:
   - nltk
   - pandas
   - pip
-  - setuptools=49.2.0
+  - setuptools
   - pip:
     - pygooglenews==0.1.2
     - streamlit
