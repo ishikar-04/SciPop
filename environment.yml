@@ -6,7 +6,7 @@ dependencies:
   - pandas=1.0.5
   - pip=20.1.1
   - setuptools=49.2.0
-  - __glibc = 2.17
+  - glibc = 2.17
   - pip:
     - pygooglenews==0.1.2
     - streamlit==1.15.1
