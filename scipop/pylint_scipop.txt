@@ -1,0 +1,12 @@
+(base) MacBook-Pro-10:scipop chocoyao$ pylint *.py
+************* Module front
+front.py:7: [E0401(import-error), ] Unable to import 'scraper'
+************* Module scraper
+scraper.py:115: [W1401(anomalous-backslash-in-string), ] Anomalous backslash in string: '\$'. String constant might be missing an r prefix.
+scraper.py:116: [W1401(anomalous-backslash-in-string), ] Anomalous backslash in string: '\#'. String constant might be missing an r prefix.
+scraper.py:59: [C0200(consider-using-enumerate), main] Consider using enumerate instead of iterating with range and len
+scraper.py:105: [C0200(consider-using-enumerate), key_words] Consider using enumerate instead of iterating with range and len
+scraper.py:113: [R1721(unnecessary-comprehension), key_words] Unnecessary use of a comprehension
+
+------------------------------------------------------------------
+Your code has been rated at 9.11/10 (previous run: 9.11/10, +0.00)

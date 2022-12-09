@@ -1,13 +1,20 @@
 """
 This is the test file which tests the SciPop function
 """
+
 import unittest
 import pandas as pd
 import scipop.scraper as sc
 
+# Avoid saying df is not a good name
+# pylint: disable=invalid-name
+
 class TestScraper(unittest.TestCase):
-    test_data_path = 'examples/UseCase1_Data.csv';
-    test_res_path = 'examples/UseCase1_res.csv';
+    """
+    This class manage the test for the scraper function.
+    """
+    test_data_path = 'examples/UseCase1_Data.csv'
+    test_res_path = 'examples/UseCase1_res.csv'
 
     def test_smoke(self):
         """
@@ -15,7 +22,6 @@ class TestScraper(unittest.TestCase):
         """
         df = pd.read_csv(self.test_data_path)
         sc.main(df)
-        return
 
     # cannot do one-shot test as the scraping result changes with time
 
@@ -31,7 +37,6 @@ class TestScraper(unittest.TestCase):
             }
         with self.assertRaises(TypeError):
             sc.main(df)
-        return
 
     def test_df_cols(self):
         """
@@ -45,7 +50,6 @@ class TestScraper(unittest.TestCase):
         df = pd.DataFrame.from_dict(data)
         with self.assertRaises(ValueError):
             sc.main(df)
-        return
 
     def test_title_col(self):
         """
@@ -56,7 +60,6 @@ class TestScraper(unittest.TestCase):
         df = df.drop(columns=['Article_Title'])
         with self.assertRaises(ValueError):
             sc.key_words(df)
-        return
 
     def test_title_type(self):
         """
@@ -71,7 +74,6 @@ class TestScraper(unittest.TestCase):
         df = pd.DataFrame.from_dict(data)
         with self.assertRaises(TypeError):
             sc.key_words(df)
-        return
 
     def test_author_col(self):
         """
@@ -82,7 +84,6 @@ class TestScraper(unittest.TestCase):
         df = df.drop(columns=['Author_Name'])
         with self.assertRaises(ValueError):
             sc.scraping_author(df)
-        return
 
     def test_author_type(self):
         """
@@ -97,7 +98,6 @@ class TestScraper(unittest.TestCase):
         df = pd.DataFrame.from_dict(data)
         with self.assertRaises(TypeError):
             sc.scraping_author(df)
-        return
 
     def test_doi_col(self):
         """
@@ -108,7 +108,6 @@ class TestScraper(unittest.TestCase):
         df = df.drop(columns=['Article_DOI'])
         with self.assertRaises(ValueError):
             sc.scraping_author(df)
-        return
 
     def test_doi_type(self):
         """
@@ -123,4 +122,3 @@ class TestScraper(unittest.TestCase):
         df = pd.DataFrame.from_dict(data)
         with self.assertRaises(TypeError):
             sc.scraping_doi(df)
-        return

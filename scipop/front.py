@@ -1,6 +1,10 @@
-from scraper import main
+"""
+This is the code for the users' interface of our web scraping functions.
+"""
+
 import streamlit as st
 import pandas as pd
+from scraper import main
 
 st.set_page_config(page_icon="🎓", page_title="SCIPOP")
 
@@ -34,7 +38,7 @@ st.write(
     # SCIPOP APP
     Upload your article dataset to see the relevant news.\n
     #### Dataset guidance:\n
-    Column_Name: Author_Name, Article_Title, Article_DOI. 
+    Column_Name: Author_Name, Article_Title, Article_DOI.
     Could see example dataset for reference.
     """
 )
@@ -50,8 +54,8 @@ use_example_file = st.checkbox(
 # Path for example file.
 if use_example_file:
     UPLOADED_FILE = "../examples/UseCase1_Data.csv"
-    
-# Read and preview input file.  
+
+# Read and preview input file.
 if UPLOADED_FILE:
     input_df = pd.read_csv(UPLOADED_FILE)
 

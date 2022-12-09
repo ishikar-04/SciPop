@@ -1,0 +1,4 @@
+(base) MacBook-Pro-10:tests chocoyao$ pylint *.py
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 8.25/10, +1.75)
