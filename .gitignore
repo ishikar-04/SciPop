@@ -1,9 +1,6 @@
 # Ignore pycache
 __pycache__
 
-# Ignore workflows
-.github/workflows
-
 # Ignore checkpoints
 .ipynb_checkpoints
 
