@@ -11,7 +11,6 @@ found in the titles of the peer-reviewed publications, DOI's and peer-reviewed j
 
 import re
 import string
-# import difflib
 import warnings
 from collections import Counter
 
@@ -218,6 +217,3 @@ def scraping_title(df):
 
             stories.append(story) 
     return stories
-
-
-

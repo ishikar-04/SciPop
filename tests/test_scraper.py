@@ -7,6 +7,7 @@ import scipop.scraper as sc
 
 class TestScraper(unittest.TestCase):
     test_data_path = 'examples/UseCase1_Data.csv';
+    test_res_path = 'examples/UseCase1_res.csv';
 
     def test_smoke(self):
         """
@@ -15,6 +16,8 @@ class TestScraper(unittest.TestCase):
         df = pd.read_csv(self.test_data_path)
         sc.main(df)
         return
+
+    # cannot do one-shot test as the scraping result changes with time
 
     def test_df(self):
         """
