@@ -1,0 +1,16 @@
+cff-version: 1.0
+message: "If you use SciPop software, please cite it as below."
+authors:
+- family-names: "Glass"
+  given-names: "Delaney J"
+  orcid: "https://orcid.org/0000-0003-0788-709X"
+- family-names: "Ray"
+  given-names: "Ishika"
+  orcid: "https://orcid.org/0000-0002-1491-8176"
+- family-names: "Liu"
+  given-names: "Qiyao"
+title: "SciPop Software"
+version: 1.0.0
+doi:
+date-released: 
+url: "https://github.com/ishikar-04/CSE583-Project"
