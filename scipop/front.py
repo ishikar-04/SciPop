@@ -20,26 +20,31 @@ def _max_width_():
     .reportview-container .main .block-container{{
         {max_width_str}
     }}
+
+    .reportview-container .markdown-text-container {
+        background-color: #310542;
+    }
+       
     </style>
     """,
         unsafe_allow_html=True,
+
     )
 
 # Display an image with its url.
 st.image(
-    "https://png.pngitem.com/pimgs/s/202-2021802_"+
-    "graduation-cap-emoji-transparent-hd-png-download.png",
+    "https://github.com/ishikar-04/CSE583-Project/blob/main/IMAGE/logo-color.png?raw=true",
     width=100,
 )
 
 # Draw Markdown-formatted text, with input as a string.
 st.write(
     """
-    # SCIPOP APP
-    Upload your article dataset to see the relevant news.\n
+    ## Upload your article dataset to see relevant news.\n
     #### Dataset guidance:\n
-    Column_Name: Author_Name, Article_Title, Article_DOI.
-    Could see example dataset for reference.
+    Please make sure that your columns are named as follows: 
+    Author_Name, Article_Title, Article_DOI.
+    For a demo, please see our example dataset for reference.
     """
 )
 
