@@ -10,7 +10,7 @@ Our software is designed to accomodate differences in user roles demonstrated be
 Delaney is an anthropologist interested in doing meta-research about how the press cites or uses scholarly research on the topic of sex/gender, hormone testing, and professional sports. For example, in many professional sports associations hormone testing for reproductive hormones (estrogen, testosterone) is still quite common. It is controversial because hormone levels are not specific to ones gender or neccessarily their biological sex assigned at birth. Delaney has a .csv file of scholarly articles organized by author first and last name, article title, and DOI. She wants to be able to upload this .csv and get a .csv list of news media indexed on Google News that are making reference to these articles when they discuss sex/gender in sports. Rather than having to search each article individually on Google News, SciPop will produce an output for the user to use as they wish. 
 
 #### Use-Case for User 1:
-User: Uploads/drags and drops a .csv file on the SciPop uploader webpage. The .csv must list the scholarly author name, journal article titles, and/or DOI's the user is interested in scoping [DRAG AND DROP]  
+User: Uploads/drags and drops a .csv file on the SciPop uploader webpage. The .csv must list the scholarly author name (labeled "Author_Name"), journal article titles (labeled "Article_Name"), and/or DOIs (labeled "Article_DOI) that the user is interested in scoping [DRAG AND DROP]  
 Tool: Reads in the .csv, scrapes Google News for each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
 Tool: Provides minimal quality checks/tests by calculating a count of how many of the most common 10 words from the scholarly article titles are present in the titles of the scraped Google News item links. The tool uses this to delete irrelevant scrape results. 
 Tool: Saves list of search results in .csv file  
@@ -20,10 +20,11 @@ User: Exports/downloads the tool output
 An oncology researcher doing work on CART cell therapy, a popular and cutting edge immunotherapy. She wants to understand how the public is writing about new immunotherapy techniques. This oncology professor knows that this area of research is high impact and likely to get picked up by media within days to months of publishing. She doesn't have a pre-specified list of articles like User 1, but she wants to use UW libraries to search for the top 50 articles relevant to search terms about CART cell therapy and then use that .csv to explore how media is popularizing this scholarly research. 
 
 #### Use-Case for User 2:
-User:  navigates to UW library search  
-User: searches for “CART Cell Therapy” peer-reviewed journal articles, filtered by year of choice (2021-2022) and searches top 50 results  
-User: downloads the query to their computer as a .csv file  
-User: uploads this .csv file to our software [DRAG AND DROP]  
+User: Navigates to UW library search  
+User: Searches for “CART Cell Therapy” peer-reviewed journal articles, filtered by year of choice (2021-2022) and searches top 50 results  
+User: Downloads the query to their computer as a .csv file  
+User: Renames column headers to SciPop-compliant labels (Author_Name, Article_Title, or Article_DOI)
+User: Uploads this .csv file to our software [DRAG AND DROP]  
 Tool: Reads in the .csv, scrapes Google News for each of the selected matching print articles (i.e. not video transcripts) which contain (i) hyperlinked DOI, (ii) author name, or (iii) article title  
 Tool: Provides minimal quality checks/tests by calculating a count of how many of the most common 10 words from the scholarly article titles are present in the titles of the scraped Google News item links. The tool uses this to delete irrelevant scrape results. 
 Tool: Saves list of search results in .csv file  
