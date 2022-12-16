@@ -49,3 +49,15 @@ User downloads stored dataframe as .csv from the SciPop webpage.
 
 ### Component 4 - Users’ Interface App
 A website for users to upload a input file in .csv format, showing the preview for input to help users check what they upload is right, and then giving back the scraping results to them as a .csv file.
+
+## Scraping Process
+Our scraping module (stored as scraper.py in the scipop directory) contains 3 scraping functions: 
+* scraping_doi: Scrapes Google News for matches to exact Digital Object Identifier
+* scraping_title: Scrapes Google News for matches to the exact title of academic article
+* scraping_author: Scrapes Google News for author name matches, but only includes news articles and URLs for search results which ALSO include at least one relevant keyword derived from the strings stored in Article_Title
+
+Our final output is a row-wise concatenation of the outputs derived from _each_ scraping function.
+
+![image](https://user-images.githubusercontent.com/62671964/208010704-36b2a22c-4ec6-4390-b71e-19254e31c1c0.png)
+
+
