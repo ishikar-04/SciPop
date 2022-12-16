@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ### To get the user's interface: RUN "streamlit run scraper.py" in terminal
+# ### To get the user's interface: RUN "streamlit run front.py" in terminal
 
 """
 This is the code for the web scraping functions using pygooglenews and other packages
